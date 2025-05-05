@@ -13,12 +13,14 @@ Este projeto fornece uma aplicação robusta para encurtamento de URLs, com gere
 
 ## 📦 Estrutura do Projeto
 
+```
 tech-encurtador-link-/
 ├── app/ # Código-fonte da aplicação
 ├── diagrama.drawio # Diagrama da arquitetura
 ├── encurtador-fbr.png # Imagem ilustrativa da aplicação
 ├── README.md # Documentação do projeto
 └── .gitignore # Arquivos ignorados pelo Git
+```
 
 ## 🛠️ Funcionalidades
 
