@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import tech.tron.core.domain.User;
 import tech.tron.core.port.in.CreateUserPortIn;
 import tech.tron.core.port.out.UserRepositoryPortOut;
+import tech.tron.exception.UserAlreadyExistException;
 
 @Component
 public class CreateUserUseCase implements CreateUserPortIn {
@@ -27,6 +28,12 @@ public class CreateUserUseCase implements CreateUserPortIn {
     public User execute(User user) {
 
         logger.info("Creating user {}", user.getEmail());
+
+        var optUser = userRepositoryPortOut.findByEmail(user.getEmail());
+
+        if (optUser.isPresent()) {
+            throw new UserAlreadyExistException();
+        }
 
         user.encodePassword(bCryptPasswordEncoder);
 

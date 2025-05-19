@@ -26,7 +26,7 @@ public class User {
     public User(String email, String password, String nickname) {
         this.userId = UUID.randomUUID();
         this.email = email;
-        this.password = password; // TODO - encode the pass
+        this.password = password;
         this.nickname = nickname;
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
