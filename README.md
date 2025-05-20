@@ -30,6 +30,16 @@ The **buildrun-link-shortener-fbr** is designed to:
 
 ---
 
+## 🛠️ Features
+
+- Long URL shortening.
+- Automatic redirection.
+- Interface for managing links.
+- Usage statistics (clicks).
+- AWS integration for scalability.
+
+---
+
 ## 📁 Project Structure
 
 ```
