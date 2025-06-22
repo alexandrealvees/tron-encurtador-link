@@ -1,4 +1,4 @@
-package tech.tron.core.usercases;
+package tech.tron.core.usercase;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
