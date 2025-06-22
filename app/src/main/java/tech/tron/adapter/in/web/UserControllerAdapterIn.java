@@ -22,7 +22,7 @@ public class UserControllerAdapterIn {
     private final DeleteUserPortIn deleteUserPortIn;
 
     public UserControllerAdapterIn(CreateUserPortIn createUserPortIn,
-                                   DeleteUserPortIn deleteeUserPortIn, DeleteUserPortIn deleteUserPortIn) {
+                                   DeleteUserPortIn deleteUserPortIn) {
         this.createUserPortIn = createUserPortIn;
         this.deleteUserPortIn = deleteUserPortIn;
     }
