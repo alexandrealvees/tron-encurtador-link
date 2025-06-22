@@ -19,13 +19,11 @@ import java.util.UUID;
 public class UserControllerAdapterIn {
 
     private final CreateUserPortIn createUserPortIn;
-    private final DeleteUserPortIn deleteeUserPortIn;
     private final DeleteUserPortIn deleteUserPortIn;
 
     public UserControllerAdapterIn(CreateUserPortIn createUserPortIn,
                                    DeleteUserPortIn deleteeUserPortIn, DeleteUserPortIn deleteUserPortIn) {
         this.createUserPortIn = createUserPortIn;
-        this.deleteeUserPortIn = deleteeUserPortIn;
         this.deleteUserPortIn = deleteUserPortIn;
     }
 

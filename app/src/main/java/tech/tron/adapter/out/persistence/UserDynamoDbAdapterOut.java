@@ -10,7 +10,6 @@ import tech.tron.core.domain.User;
 import tech.tron.core.port.out.UserRepositoryPortOut;
 
 import java.util.Optional;
-import java.util.Spliterator;
 import java.util.UUID;
 
 import static tech.tron.config.Constants.EMAIL_INDEX;
