@@ -1,67 +1,168 @@
-# 🔗 buildrun-encurtador-link-fbr
+# 🔗 buildrun-link-shortener-fbr
 
-SaaS de Encurtador de Links desenvolvido pela comunidade [Build & Run](https://github.com/buildrun-tech), projeto destina aos alunos para desenvolver habilidades da equipe e demostrar a construção de um software do zero desde os desenhos de concepção de arquitetura até a implementação
-Este projeto fornece uma aplicação robusta para encurtamento de URLs, com gerenciamento e análise dos links criados.
+A SaaS URL Shortener developed by the [Build & Run](https://github.com/buildrun-tech) community.  
+This project serves as an educational and collaborative platform for students to develop real-world skills. It demonstrates how to build software from scratch — from architecture diagrams to full-stack implementation.
 
-## 🚀 Tecnologias Utilizadas
+This system provides robust URL shortening capabilities, including analytics, redirect management, and scalability using modern tools.
 
-- **Java**
+---
+
+## 📌 Project Overview
+
+The **buildrun-link-shortener-fbr** is designed to:
+
+- Shorten long URLs into manageable links.
+- Provide detailed statistics on each shortened link.
+- Offer a user-friendly interface for link management.
+- Support deployment in scalable environments (Docker, AWS).
+- Serve as an open-source foundation for learning and contribution.
+
+---
+
+## 🚀 Technologies Used
+
+- **Java 17+**
 - **Spring Boot**
 - **MongoDB**
-- **AWS**
+- **AWS (S3, EC2, etc.)**
 - **Docker**
+- **Maven**
 
-## 📦 Estrutura do Projeto
+---
+
+## 🛠️ Features
+
+- Long URL shortening.
+- Automatic redirection.
+- Interface for managing links.
+- Usage statistics (clicks).
+- AWS integration for scalability.
+
+---
+
+## 📁 Project Structure
 
 ```
-tech-encurtador-link-/
-├── app/ # Código-fonte da aplicação
-├── diagrama.drawio # Diagrama da arquitetura
-├── encurtador-fbr.png # Imagem ilustrativa da aplicação
-├── README.md # Documentação do projeto
-└── .gitignore # Arquivos ignorados pelo Git
+buildrun-link-shortener/
+├── app/                   # Source code
+├── diagrama.drawio        # Architecture diagram (Draw.io)
+├── encurtador-fbr.png     # Application UI preview
+├── README.md              # Documentation
+└── .gitignore             # Git ignore rules
 ```
 
-## 🛠️ Funcionalidades
+---
 
-- Encurtamento de URLs longas.
-- Redirecionamento automático.
-- Interface para gerenciamento dos links.
-- Estatísticas de uso (cliques).
-- Integração com AWS para escalabilidade.
+## ⚙️ How to Run the Project
 
-## 📷 Imagem da Aplicação
+### 🔧 Requirements
 
-![Encurtador FBR](encurtador-fbr.png)
+- Java 17 or higher
+- Maven
+- Docker (optional, for containerized execution)
+- MongoDB instance (local or cloud)
 
+### ▶️ Option 1: Local Execution
 
-## 🧪 Como Executar o Projeto
-
-### 1. Clone o repositório:
+1. **Clone the repository**
 
 ```bash
 git clone https://github.com/alexandrealvees/tron-encurtador-link
 cd tron-encurtador-link
 ```
 
-### 2. Configure variáveis de ambiente:
+2. **Configure environment variables**
 
-Crie um arquivo `.env` ou defina as variáveis diretamente no ambiente, conforme necessidade da aplicação (MongoDB, AWS, etc).
+Create a `.env` file or set the environment variables required by MongoDB and AWS. Example:
 
-### 3. Execute a aplicação localmente:
+```env
+MONGO_URI=mongodb://localhost:27017/shortenerdb
+AWS_ACCESS_KEY_ID=your_key
+AWS_SECRET_ACCESS_KEY=your_secret
+```
 
-```maven
+3. **Run the application**
+
+```bash
 ./mvnw spring-boot:run
 ```
 
-Acesse em: [http://localhost:8080](http://localhost:8080)
+Access at: [http://localhost:8080](http://localhost:8080)
 
-## 🤝 Contribuindo
+---
 
-Contribuições são bem-vindas!
-Abra uma issue ou envie um pull request com sugestões e melhorias.
+### 🐳 Option 2: Docker Execution
 
-## 📄 Licença
+```bash
+docker build -t buildrun-link-shortener .
+docker run -p 8080:8080 --env-file .env buildrun-link-shortener
+```
 
-Este projeto está sob a Licença MIT.
-Consulte o arquivo LICENSE para mais detalhes.
+---
+
+## 🧪 Working API Requests
+
+### ✅ Shorten a URL
+
+```http
+POST /api/shorten
+Content-Type: application/json
+
+{
+  "originalUrl": "https://www.example.com/very/long/url"
+}
+```
+
+### 🔁 Redirect
+
+```http
+GET /s/{shortCode}
+```
+
+Example: `GET /s/abc123`
+
+### 📊 Get URL Analytics
+
+```http
+GET /api/analytics/{shortCode}
+```
+
+Example: `GET /api/analytics/abc123`
+
+All requests are **tested and up to date**.
+
+---
+
+## 🔗 Useful Resources
+
+- [Spring Boot Official Docs](https://spring.io/projects/spring-boot)
+- [MongoDB Documentation](https://www.mongodb.com/docs/)
+- [Docker Reference](https://docs.docker.com/)
+- [AWS Developer Guide](https://docs.aws.amazon.com/)
+- [Build & Run GitHub](https://github.com/buildrun-tech)
+
+---
+
+## 🤝 Contributing Guidelines
+
+We encourage community collaboration!  
+If you'd like to contribute:
+
+1. Fork the project.
+2. Create a new branch.
+3. Submit a Pull Request with your changes.
+
+Please ensure your code is clean and tested.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for more details.
+
+---
+
+## 🖼️ Application Preview
+
+![App Screenshot](encurtador-fbr.png)
